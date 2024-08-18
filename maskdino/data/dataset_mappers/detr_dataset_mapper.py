@@ -70,6 +70,7 @@ class DetrDatasetMapper:
     def __init__(self, cfg, is_train=True):
         if cfg.INPUT.CROP.ENABLED and is_train:
             self.crop_gen = [
+                T.Resize((512,512),
                 T.ResizeShortestEdge([400, 500, 600], sample_style="choice"),
                 T.RandomCrop(cfg.INPUT.CROP.TYPE, cfg.INPUT.CROP.SIZE),
             ]
