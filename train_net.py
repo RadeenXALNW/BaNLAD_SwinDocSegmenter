@@ -347,11 +347,11 @@ def setup(args):
 
 
 def main(args):
-    register_coco_instances("prima_train",{},"FewX/datasets/coco/new_annotations/final_split_non_voc_instances_prima.json","FewX/datasets/coco/Images")
-    register_coco_instances("prima_val",{},"FewX/datasets/coco/prima/annotations-val.json","FewX/datasets/coco/val")
+    register_coco_instances("dataset_train",{},"path to the ground truth json file","path to the training image folder")
+    register_coco_instances("dataset_val",{},"path to the ground truth json file","path to the validation image folder")
 
-    MetadataCatalog.get("prima_train").thing_classes = ['Background', 'TextRegion', 'ImageRegion', 'TableRegion', 'MathsRegion', 'SeparatorRegion', 'OtherRegion']
-    MetadataCatalog.get("prima_val").thing_classes = ['Background', 'TextRegion', 'ImageRegion', 'TableRegion', 'MathsRegion', 'SeparatorRegion', 'OtherRegion',]
+    MetadataCatalog.get("dataset_train").thing_classes = ['name of the classes']
+    MetadataCatalog.get("dataset_val").thing_classes = ['name of the classes']
     cfg = setup(args)
     print("Command cfg:", cfg)
     if args.eval_only:
