@@ -385,8 +385,8 @@ if __name__ == "__main__":
     args.dist_url = 'tcp://127.0.0.1:' + str(port)
     print("Command Line Args:", args)
     print("pwd:", os.getcwd())
-    MetadataCatalog.get("prima_train").thing_classes = ['Background', 'TextRegion', 'ImageRegion', 'TableRegion', 'MathsRegion', 'SeparatorRegion', 'OtherRegion']
-    MetadataCatalog.get("prima_val").thing_classes = ['Background', 'TextRegion', 'ImageRegion', 'TableRegion', 'MathsRegion', 'SeparatorRegion', 'OtherRegion']
+    MetadataCatalog.get("pub_train").thing_classes = ['news', 'image', 'news', 'paragraph', 'table', 'text-box']
+    MetadataCatalog.get("pub_val").thing_classes = ['news', 'image', 'news', 'paragraph', 'table', 'text-box']
 
     launch(
         main,
